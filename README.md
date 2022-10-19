@@ -9,19 +9,19 @@
 <h1 align="center">MIT MERN 2022</h1>
 
 <p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/jlpm-mex/mit-mern-2022?color=56BEB8">
+  <img alt="Github top language" src="https://img.shields.io/github/languages/top/jlpm-mex/tiktac?color=56BEB8">
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/jlpm-mex/mit-mern-2022?color=56BEB8">
+  <img alt="Github language count" src="https://img.shields.io/github/languages/count/jlpm-mex/tiktac?color=56BEB8">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jlpm-mex/mit-mern-2022?color=56BEB8">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/jlpm-mex/tiktac?color=56BEB8">
 
-  <img alt="License" src="https://img.shields.io/github/license/jlpm-mex/mit-mern-2022?color=56BEB8">
+  <img alt="License" src="https://img.shields.io/github/license/jlpm-mex/tiktac?color=56BEB8">
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/jlpm-mex/mit-mern-2022?color=56BEB8" /> -->
+  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/jlpm-mex/tiktac?color=56BEB8" /> -->
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/jlpm-mex/mit-mern-2022?color=56BEB8" /> -->
+  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/jlpm-mex/tiktac?color=56BEB8" /> -->
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/jlpm-mex/mit-mern-2022?color=56BEB8" /> -->
+  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/jlpm-mex/tiktac?color=56BEB8" /> -->
 </p>
 
 <!-- Status -->
@@ -71,10 +71,10 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) in
 
 ```bash
 # Clone this project
-$ git clone https://github.com/jlpm-mex/mit-mern-2022
+$ git clone https://github.com/jlpm-mex/tiktac
 
 # Access
-$ cd mit-mern-2022
+$ cd tiktac
 
 # The server will initialize in the <http://localhost:3000>
 ```
