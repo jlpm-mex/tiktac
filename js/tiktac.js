@@ -1,5 +1,7 @@
+const {Button, Alert, Row, Container, Col} = ReactBootstrap;
+
 const Square = ({ takeTurn, id }) => {
-  const mark = ["O", "X", "+"];
+  const mark = ["O", "X", ""];
   // id is the square's number
   // filled tells us if square has been filled
   // tik tells us symbol in square (same as player)
@@ -9,10 +11,12 @@ const Square = ({ takeTurn, id }) => {
 
   return (
     <button
-      onClick={() => {
-        setTik(takeTurn(id));
-        setFilled(true);
-        console.log(`Square: ${id} filled by player : ${tik}`);
+      onClick={(e) => {
+        if (!filled) {
+          setTik(takeTurn(id));
+          setFilled(true);
+          console.log(`Square: ${id} filled by player : ${tik}`);
+        }
       }}
     >
       <h1>{mark[tik]}</h1>
@@ -20,13 +24,22 @@ const Square = ({ takeTurn, id }) => {
   );
 };
 
+const renderControls = (resetPlayer) => {
+  return(
+    <Button onClick = {()=>{
+      resetPlayer();
+    }}className = "w-50" variant = "info">Reiniciar</Button>
+  );
+}
+
 const Board = () => {
   // 1st player is X ie 1
   // State keeps track of next player and gameState
   const [player, setPlayer] = React.useState(1);
   const [gameState, setGameState] = React.useState([]);
+  const [resetGame, setResetGame] = React.useState(false);
   // check for winner (see superset.js)
-  let status = `Winner is ${checkForWinner(gameState)}`;
+  let status = checkForWinner(gameState);
   console.log(`We hava a winner ${status}`);
 
   const takeTurn = (id) => {
@@ -38,27 +51,52 @@ const Board = () => {
     // use properties to pass callback function takeTurn to Child
     return <Square takeTurn={takeTurn} id={i}></Square>;
   }
+  const resetPlayer = () => {
+    setPlayer(1);
+    setGameState([]);
+    setResetGame(true);
+  }
+
+  React.useEffect(()=>{
+    if(resetGame=== true) setResetGame(false);
+  },[resetGame])
+
   return (
-    <div className="game-board">
-      <div className="grid-row">
-        {renderSquare(0)}
-        {renderSquare(1)}
-        {renderSquare(2)}
-      </div>
-      <div className="grid-row">
-        {renderSquare(3)}
-        {renderSquare(4)}
-        {renderSquare(5)}
-      </div>
-      <div className="grid-row">
-        {renderSquare(6)}
-        {renderSquare(7)}
-        {renderSquare(8)}
-      </div>
-      <div id="info">
-        <h1>{status}</h1>
-      </div>
-    </div>
+    <Container className = "text-center m-auto">
+      {status != "No Winner Yet" && (
+        <Alert variant="success">{`Winner is ${status}`}</Alert>
+      )}
+      <Row>
+        <Col>
+          <div>
+            <p>Turno: {`${player == 1 ? 'X' : 'O'}`}</p>
+          </div>
+        </Col>
+      </Row>
+      {!resetGame && 
+      <Row className="game-board">
+        <Row className="grid-row m-0 p-0">
+          {renderSquare(0)}
+          {renderSquare(1)}
+          {renderSquare(2)}
+        </Row>
+        <Row className="grid-row m-0 p-0">
+          {renderSquare(3)}
+          {renderSquare(4)}
+          {renderSquare(5)}
+        </Row>
+        <Row className="grid-row m-0 p-0">
+          {renderSquare(6)}
+          {renderSquare(7)}
+          {renderSquare(8)}
+        </Row>
+      </Row>
+      }
+      <Row className="text-center m-2" id="controls">
+        <Col>{renderControls(resetPlayer)}</Col>
+      </Row>
+      
+    </Container>
   );
 };
 

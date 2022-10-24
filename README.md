@@ -51,9 +51,8 @@ Semana 16
 
 ## :sparkles: Features ##
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Boton para reiniciar el juego;\
+:heavy_check_mark: Indicador de turno;\
 
 ## :rocket: Technologies ##
 
@@ -81,9 +80,9 @@ $ cd tiktac
 
 ## :alarm_clock: Mejoras ##
 
-- Personalizar los estilos
-- Agregar un boton para reiniciar el juego
-- Bloquear los botones al resultar un ganador
+- Mejorar los estilos
+- Indicar al terminar el juego
+- Agregar un contador de partidas ganadas
 
 ## :memo: License ##
 
